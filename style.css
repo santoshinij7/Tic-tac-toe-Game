@@ -54,11 +54,11 @@ button {
     padding: 10px 20px;
     border-radius: 10px;
     background-color: var(--yellow);
-    color: #333;
+    color: #3804e3e0;
     border-color: var(--yellow);
     font-size: 18px;
     transition: 200ms transform;
-    font-weight: 600;
+    font-weight: 200;
 }
 button:hover {
     cursor: pointer;
