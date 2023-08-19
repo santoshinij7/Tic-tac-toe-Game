@@ -41,13 +41,13 @@ h1{
     border-right: 2px solid;
     border-bottom:2px solid;
 }
-.box:nth-child(3n){
+/* .box:nth-child(3n){
     border-right:none;
 }
 
 .box:nth-child(6) ~ .box {
     border-bottom:none;
-}
+} */
 button{
     padding: 10px 20px;
     border-radius: 10px;
