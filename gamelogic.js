@@ -1,31 +1,30 @@
-let playerText = document.getElementById('playerText');
-let restartBtn = document.getElementById('restartBtn');
-let boxes = Array.form (document.getElementByClassName('box'));
+let playerText = document.getElementById('playerText')
+let restartBtn = document.getElementById('restartBtn')
+let boxes = Array.from(document.getElementsByClassName('box'))
 
 let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-blocks')
 
-const O_TEXT = 'O';
-const X_TEXT = 'X';
-let currentPlayer =  X_TEXT
+const O_TEXT = "O"
+const X_TEXT = "X"
+let currentPlayer = X_TEXT
 let spaces = Array(9).fill(null)
 
 const startGame = () => {
-    boxes.forEach(box => addEventListener('click', boxClicked))
+    boxes.forEach(box => box.addEventListener('click', boxClicked))
 }
-function boxClicked(e){
-    const id = e.target.id 
+
+function boxClicked(e) {
+    const id = e.target.id
 
     if(!spaces[id]){
         spaces[id] = currentPlayer
         e.target.innerText = currentPlayer
 
-
-        if(playerHasWon() !== false){
-            playerText = `${currentPlayer} has won!`
+        if(playerHasWon() !==false){
+            playerText.innerHTML = `${currentPlayer} has won!`
             let winning_blocks = playerHasWon()
 
             winning_blocks.map( box => boxes[box].style.backgroundColor=winnerIndicator)
-            
             return
         }
 
@@ -44,12 +43,12 @@ const winningCombos = [
     [2,4,6]
 ]
 
-function playerHasWon(){
-    for (const condition of winningCombos){
-        let [a,b,c] = condition
+function playerHasWon() {
+    for (const condition of winningCombos) {
+        let [a, b, c] = condition
 
-        if (spaces[a] && (spaces[a] == spaces [b] && spaces [a] && spaces[c])){
-            return[a,b,c]
+        if(spaces[a] && (spaces[a] == spaces[b] && spaces[a] == spaces[c])) {
+            return [a,b,c]
         }
     }
     return false
@@ -57,17 +56,17 @@ function playerHasWon(){
 
 restartBtn.addEventListener('click', restart)
 
-
-restartBtn.addEventListener('click',restart)
-function restart(){
+function restart() {
     spaces.fill(null)
-    boxes.forEach(box => {
+
+    boxes.forEach( box => {
         box.innerText = ''
         box.style.backgroundColor=''
     })
-    playerText.innerHTML = 'Tic Tac Toe'
 
+    playerText.innerHTML = 'Tic Tac Toe'
 
     currentPlayer = X_TEXT
 }
+
 startGame()
