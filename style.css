@@ -24,7 +24,7 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #D864A9;
+    background-color: #000000;
 }
 
 #gameboard {
@@ -57,10 +57,10 @@ button {
     color: #3804e3e0;
     border-color: var(--yellow);
     font-size: 18px;
-    transition: 200ms transform;
+    transition: 100ms transform;
     font-weight: 200;
 }
 button:hover {
     cursor: pointer;
-    transform: translateY(-2px);
+    transform: translateY(0.5px);
 }
