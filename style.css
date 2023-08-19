@@ -7,16 +7,14 @@
     --yellow: #F1C93B;
     --winning-blocks:#1A5D1A;
 }
-}
-
 body {
     color: var(--yellow);
     font-family: 'Finger Paint', cursive;
 }
 h1 {
     font-size: 54px;
-    color: aliceblue;
     text-transform:capitalize;
+    color: rgb(39, 130, 0);
 }
 .container {
     padding: 40px;
